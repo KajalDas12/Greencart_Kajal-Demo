@@ -12,5 +12,14 @@ cddescribe('My First Test Suite',function()
     //Parent child chaining
     cy.get('.products').find('.product').should('have.length', 4)
     cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
+    cy.get('.products').find('.product').each(($el, index, $list) => {
 
-    }  )
+    const textveg = $el.find('h4.product-name').text()
+     if(textveg.includes('Cashews'))
+    {
+     $el.find('button').click()
+    }
+})
+ })
+})
+     
