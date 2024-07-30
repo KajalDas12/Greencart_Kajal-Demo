@@ -22,4 +22,14 @@ cddescribe('My First Test Suite',function()
 })
  })
 })
+ it('should log the text of .brand element', () => {
+  cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
+  cy.get('.brand').then((logoelement) =>{
+  
+    const text = logoelement.text();
      
+    cy.log(text);
+  });
+});
+
+    
